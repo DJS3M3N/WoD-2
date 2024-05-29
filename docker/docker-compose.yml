@@ -1,0 +1,15 @@
+version: '1'
+
+services:
+  postgres:
+    image: postgres:14.5
+    container_name: wod_db
+    environment:
+      POSTGRES_USER: cyril
+      POSTGRES_PASSWORD: gigapassword
+      POSTGRES_DB: wod_db
+    ports:
+      - "5432:5432"
+    volumes:
+      #- ./docker/db/scripts/wod_db:/docker-entrypoint-initdb.d
+      - ./docker/db/config/wod_db:/etc/postgresql/postgresql.conf
