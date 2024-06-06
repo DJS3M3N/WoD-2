@@ -286,7 +286,12 @@ export class PvpGameService {
 								(y) =>
 									`${y.class?.emoji} ${y.name} - ${y.hp}❤️\nНанесенный урон: ${y.damage}💔`
 							)
-							.join("\n\n")}`
+							.join("\n\n")}`,
+						{
+							reply_markup: Markup.inlineKeyboard([
+								Markup.button.callback(`Вернуться в меню`, `back_to_menu`),
+							]).reply_markup,
+						}
 					);
 				});
 			} else {
@@ -298,7 +303,12 @@ export class PvpGameService {
 								(y) =>
 									`${y.class?.emoji} ${y.name} - ${y.hp}❤️\nНанесенный урон: ${y.damage}💔`
 							)
-							.join("\n\n")}`
+							.join("\n\n")}`,
+						{
+							reply_markup: Markup.inlineKeyboard([
+								Markup.button.callback(`Вернуться в меню`, `back_to_menu`),
+							]).reply_markup,
+						}
 					);
 				});
 			}
